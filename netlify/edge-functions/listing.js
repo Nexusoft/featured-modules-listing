@@ -61,7 +61,7 @@ const list = [
         displayName: 'Nexus Invoice',
         description: 'Send, pay, and manage invoices on Nexus blockchain',
         type: 'app',
-        icon: 'https://nexus-module-icons.netlify.app/resources/invoice.svg',
+        icon: 'https://nexus-static-resources.netlify.app/invoice.svg',
         repoInfo: {
           host: 'github.com',
           owner: 'Nexusoft',
@@ -77,7 +77,7 @@ const list = [
         displayName: 'Market Data',
         description: 'Market Data of Nexus trading on major exchanges',
         type: 'app',
-        icon: 'https://nexus-module-icons.netlify.app/resources/chart.svg',
+        icon: 'https://nexus-static-resources.netlify.app/chart.svg',
         repoInfo: {
           host: 'github.com',
           owner: 'Nexusoft',
