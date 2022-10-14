@@ -10,12 +10,12 @@ export default function (request, context) {
       isHigherOrEqual(parsedVersion, fm.fromWalletVersion)
     );
     if (matchedList) {
-      return context.json(matchedList.modules);
+      return sendResponse(matchedList.modules, context);
     }
   }
 
   // if (!parsedVersion || !matchedList)
-  return context.json(list.find((fm) => fm.latest).modules);
+  return sendResponse(list.find((fm) => fm.latest).modules, context);
 }
 
 function getQueryValue(url, key) {
@@ -45,6 +45,12 @@ function isHigherOrEqual(ver1, ver2) {
   else if (ver1.minor > ver2.minor) return true;
   else if (ver1.patch < ver2.patch) return false;
   else return true;
+}
+
+function sendResponse(data, context) {
+  const res = context.json(data);
+  res.headers.append('Allow-Access-Control-Origin', 'http://localhost');
+  return res;
 }
 
 const list = [
