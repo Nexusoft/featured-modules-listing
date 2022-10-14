@@ -3,7 +3,7 @@ export default function (request, context) {
   const parsedVersion = parseVersion(walletVersion);
 
   // Cache the list for 1 day
-  res.append('Cache-Control', 'max-age=86400000');
+  // res.append('Cache-Control', 'max-age=86400000');
 
   if (parsedVersion) {
     const matchedList = list.find((fm) =>
@@ -19,7 +19,7 @@ export default function (request, context) {
 }
 
 function getQueryValue(url, key) {
-  const index = url.findIndex('?');
+  const index = url.indexOf('?');
   const queryString = index >= 0 ? url.substring(index + 1) : '';
   const queries = queryString.split('&');
   const matchedQuery = queries.find((query) => query.startsWith(key + '='));
@@ -61,7 +61,7 @@ const list = [
         displayName: 'Nexus Invoice',
         description: 'Send, pay, and manage invoices on Nexus blockchain',
         type: 'app',
-        icon: 'invoice.svg',
+        icon: 'https://nexus-module-icons.netlify.app/resources/invoice.svg',
         repoInfo: {
           host: 'github.com',
           owner: 'Nexusoft',
@@ -77,7 +77,7 @@ const list = [
         displayName: 'Market Data',
         description: 'Market Data of Nexus trading on major exchanges',
         type: 'app',
-        icon: 'chart.svg',
+        icon: 'https://nexus-module-icons.netlify.app/resources/chart.svg',
         repoInfo: {
           host: 'github.com',
           owner: 'Nexusoft',
