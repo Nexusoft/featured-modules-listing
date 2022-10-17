@@ -49,7 +49,7 @@ function isHigherOrEqual(ver1, ver2) {
 
 function sendResponse(data, context) {
   const res = context.json(data);
-  res.headers.append('Access-Control-Allow-Origin', 'http://localhost');
+  res.headers.append('Access-Control-Allow-Origin', '*');
   return res;
 }
 
