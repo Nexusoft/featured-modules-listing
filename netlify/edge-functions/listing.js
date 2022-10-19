@@ -2,9 +2,6 @@ export default function (request, context) {
   const walletVersion = getQueryValue(request.url, 'wallet_version');
   const parsedVersion = parseVersion(walletVersion);
 
-  // Cache the list for 1 day
-  // res.append('Cache-Control', 'max-age=86400000');
-
   if (parsedVersion) {
     const matchedList = list.find((fm) =>
       isHigherOrEqual(parsedVersion, fm.fromWalletVersion)
@@ -47,9 +44,12 @@ function isHigherOrEqual(ver1, ver2) {
   else return true;
 }
 
+const maxAge = 604800; // 7 days
+
 function sendResponse(data, context) {
   const res = context.json(data);
   res.headers.append('Access-Control-Allow-Origin', '*');
+  res.headers.append('Cache-Control', 'max-age=' + maxAge);
   return res;
 }
 
