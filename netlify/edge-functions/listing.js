@@ -63,7 +63,7 @@ const list = [
     },
     modules: [
       {
-        name: 'nexus-invoice',
+        name: 'nexus_invoice',
         displayName: 'Nexus Invoice',
         description: 'Send, pay, and manage invoices on Nexus blockchain',
         type: 'app',
@@ -79,7 +79,7 @@ const list = [
         },
       },
       {
-        name: 'nexus-market-data',
+        name: 'nexus_market_data',
         displayName: 'Market Data',
         description: 'Market Data of Nexus trading on major exchanges',
         type: 'app',
@@ -88,6 +88,22 @@ const list = [
           host: 'github.com',
           owner: 'Nexusoft',
           repo: 'nexus-market-data-module',
+        },
+        author: {
+          name: 'Nexus Team',
+          email: 'developer@nexus.io',
+        },
+      },
+      {
+        name: 'nexus_interface_history_module',
+        displayName: 'Transaction History Module',
+        description: 'Loads and Saves history data for your Nexus Account',
+        type: 'app',
+        icon: 'https://nexus-static-resources.netlify.app/tx_history.svg',
+        repoInfo: {
+          host: 'github.com',
+          owner: 'Nexusoft',
+          repo: 'nexus-interface-history-module',
         },
         author: {
           name: 'Nexus Team',
