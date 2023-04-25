@@ -95,7 +95,7 @@ const list = [
         },
       },
       {
-        name: 'nexus_interface_history_module',
+        name: 'transaction_history',
         displayName: 'Transaction History Module',
         description: 'Loads and Saves history data for your Nexus Account',
         type: 'app',
@@ -103,7 +103,7 @@ const list = [
         repoInfo: {
           host: 'github.com',
           owner: 'Nexusoft',
-          repo: 'nexus-interface-history-module',
+          repo: 'nexus-transaction-history-module',
         },
         author: {
           name: 'Nexus Team',
